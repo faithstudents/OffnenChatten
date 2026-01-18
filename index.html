@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>OffnenChatten | Home</title>
+
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/css/master.css">
+	<link rel="stylesheet" href="/css/header_footer.css">
+	<link rel="stylesheet" href="/css/sidebar.css">
+	<link rel="stylesheet" href="/css/messages.css">
+
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+  </head>
+  <body>
+		<!-- Header bar -->
+		<header>
+			<div></div>
+			<h3>Welcome to OffnenChatten!</h3>
+			<div class="right">
+				<i class="fa-solid fa-gear icon-btn"></i>
+        		<i class="fa-solid fa-right-from-bracket icon-btn"></i>
+			</div>
+		</header>
+
+
+		<div class="app">
+
+			<!-- Chats Sidebar -->
+			<div class="sidebar1">
+				<div class="chat_ctrls">
+					<button id="new_chat_btn"><i class="fa-solid fa-plus"></i></button>
+					<button id="dms_btn"><i class="fa-solid fa-message"></i></button>
+				</div>
+
+				<div id="chat_list"></div>
+			</div>
+
+
+			<!-- Message Container -->
+			<div id="msg_container">
+				<ul id="messages">
+					<!-- Messages get loaded here -->
+				</ul>
+
+
+				<!-- Message Controls -->
+				<div class="message_controls">
+					<input type="text" name="Message Input" id="message_input" placeholder="Type a message...">
+					<button id="send_btn"><i class="fa-solid fa-paper-plane"></i></button>
+				</div>
+			</div>
+
+		</div>
+
+    	<script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

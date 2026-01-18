@@ -1,0 +1,113 @@
+/* CHATS SIDEBAR (sidebar1) */
+.sidebar1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100dvh;
+    background-color: var(--bg-sidebar);
+    width: 50px;
+    align-items: center;
+    padding: 8px;
+}
+
+.sidebar1 button {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-blue);
+    cursor: pointer;
+}
+
+.sidebar1 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-blue);
+    cursor: pointer;
+}
+
+.sidebar1 .chat_ctrls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+
+/*
+    Custom tooltip
+*/
+/* The wrapper that holds both button and tooltip */
+.nav-item-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+/* The Icon Button */
+.nav-icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-nav);
+    cursor: pointer;
+    transition: border-radius 0.2s, background-color 0.2s;
+    overflow: hidden;
+    padding: 0;
+}
+
+.nav-icon-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The Tooltip */
+.nav-tooltip {
+    position: absolute;
+    left: 58px; /* Push it to the right of the icon */
+    background-color: #000; /* Discord uses pure black for tooltips */
+    color: #fff;
+    padding: 12px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    pointer-events: none; /* User can't click the tooltip */
+    
+    /* Animation hidden state */
+    opacity: 0;
+    transform: scale(0.9) translateX(-10px);
+    transition: opacity 0.1s, transform 0.1s;
+    z-index: 100;
+}
+
+/* The little arrow (beak) */
+.nav-tooltip::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #000;
+}
+
+/* Show on Hover */
+.nav-item-container:hover .nav-tooltip {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+
+.nav-item-container:hover .nav-icon-btn {
+    border-radius: 30%; /* Squircle hover */
+    background-color: var(--accent-blue);
+}

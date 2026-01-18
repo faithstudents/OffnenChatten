@@ -1,0 +1,9 @@
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-nav);
+    height: 30px;
+    flex-shrink: 0;
+}
