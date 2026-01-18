@@ -46,6 +46,8 @@ body {
 
 .app {
     display: flex;
+    flex: 1;
+    overflow: hidden;
 }
 
 

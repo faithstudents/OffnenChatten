@@ -6,7 +6,12 @@ import type { Message, User } from "./Message";
 export class MessageHandler {
     
     async fetch(chat_id: String): Promise<Message[]> {
-        const { data, error } = await supabase.from('messages').select('*').eq('chat_id', chat_id).limit(50)
+        const { data, error } = await supabase
+            .from('messages')
+            .select('*')
+            .eq('chat_id', chat_id)
+            .order('created_at', { ascending: false })
+            .limit(50)
 
         if (error) {
             throw new Error('[ERROR]: Failed to fetch messages! | ', error);
@@ -14,6 +19,17 @@ export class MessageHandler {
 
         // Return the fetched data
         return data as Message[];
+    }
+
+
+    async sendMessage(chat_id: string, sender_id: string, content: string) {
+        const { data, error } = await supabase
+            .from('messages')
+            .insert([{ chat_id, sender_id, content }])
+            .select()
+
+        if (error) throw error;
+        return data[0];
     }
 
 
